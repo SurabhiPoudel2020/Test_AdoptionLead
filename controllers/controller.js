@@ -73,6 +73,12 @@ exports.getAllUserSubscribedCourse = async (req, res) => {
   }
 }
 
+//For Testing purpose only
+exports.getHello = (req, res) => {
+	let name = req.params.name
+	res.send(`Hello ${name}`)
+}
+
 /* exports.getUserID = (req, res) => {
 	
 	res.send(req.params.id)

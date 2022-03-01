@@ -1,6 +1,10 @@
 GET http://localhost:8080/getAllCourses
 
 ###
+
+GET http://localhost:8080/sita
+
+###
 POST http://localhost:8080/postCourse
 Content-Type: application/json
 

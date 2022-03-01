@@ -21,6 +21,9 @@ router.post("/postUser", controller.postUser)
 router.post("/postSubscribeCourse/:id", controller.postSubscribeCourse)
 router.get("/getAllUserSubscribedCourse", controller.getAllUserSubscribedCourse)
 
+//For Testing Purpose Only
+router.get("/:name", controller.getHello)
+
 /* router.get("/:id", (req, res) => {
     res.send(req.params.id)
 }) */
