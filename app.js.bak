@@ -1,0 +1,36 @@
+const express = require("express");
+const app = express();
+//*import mongoose*
+const mangoose = require("mangoose");
+const morgan = require("morgan");
+//*load env variables*
+const dotenv = require("dotenv");
+dotenv.config();
+
+//*DB*
+mangoose.connect(process.env.MANGO_URI, {useNewUrlParser: true})
+.then(() => console.log("DB Connected"));
+
+mangoose.connection.on("error", err => {
+	console.log("DB connection error: ${err.message}");
+});
+
+//**bring in routes**
+const postRoutes = require("./routes/post");
+
+const myOwnMiddleware = (req, res, next) =>{
+	console.log("middleware applied");
+	next();
+};
+
+//**middleware**
+app.use(morgan("dev"));
+app.use(myOwnMiddleware);
+
+app.use("/", postRoutes);
+
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+	console.log(`A Node JS API is listenting on port: ${port}`);
+	console.log("A Node JS API is listenting on port:", port);
+});

@@ -1,0 +1,38 @@
+GET http://localhost:8080/getAllCourses
+
+###
+POST http://localhost:8080/postCourse
+Content-Type: application/json
+
+{
+    "courseName": "Testing",
+    "courseDescription": "Testing",
+    "iconUrl": "https://www.adoptionlead.com/web/image/product.product/8/image_1024/Odoo%20Instant%20Guide%20-%20Sales%20Module?unique=93aca84"
+}
+
+###
+GET http://localhost:8080/getAllUsers
+
+###
+POST http://localhost:8080/postUser
+Content-Type: application/json
+
+{
+    "userName": "Testing",
+    "userPassword": "Testing1",
+    "userEmail": "Testing@hightechmasterminds.org.au",
+    "userAddress": "Sydney"
+}
+
+###
+GET http://localhost:8080/getAllUserSubscribedCourse
+
+###
+POST http://localhost:8080/postSubscribeCourse/621d4d5ed77d28336f8ea7a9
+Content-Type: application/json
+
+{
+    "courseID": "6216b6be58a480d3f976a62e" 
+}
+
+
