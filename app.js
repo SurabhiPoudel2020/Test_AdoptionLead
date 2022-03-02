@@ -17,8 +17,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 //Database Connection
-/* mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true})
-	.then(() => console.log("DB Connected")); */
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true})
+	.then(() => console.log("DB Connected"));
 //OR
 //mongoose.connect('mongodb://localhost:27017/adoptionlead_db').then(() => {
 //	console.log('Mongodb connected...');
